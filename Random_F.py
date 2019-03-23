@@ -68,7 +68,6 @@ cmap = ('Blues_r')
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 plt.title('Accuracy: '+ '{:.0%}'.format(accuracy_score), size = 15)
-plt.show()
 plt.savefig('RFC_Accuracy'+'.png')
 plt.clf()
 
@@ -82,6 +81,5 @@ plt.barh(range(X_train.shape[1]), importances,
 # change indices to a list of labels on the following line.
 plt.yticks(range(X_train.shape[1]),wine_df.columns)
 plt.ylim([-1, X_train.shape[1]])
-plt.show()
 plt.savefig('Feature_Importances_Accuracy'+'.png')
 plt.clf()
