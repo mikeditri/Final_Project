@@ -9,7 +9,7 @@
 ### Resources
 Your repository should include the following:
 
-- Python script for your analysis: `Final_script.py`
+- Python script for your analysis: `Random_F.py`
 - Results figure/saved file: `figures/`
 - Dockerfile for your experiment: `Dockerfile`
 - runtime-instructions in a file named `RUNME.md`
@@ -32,14 +32,16 @@ There are thirteen different measurements taken for different constituents found
 
 ### Methods
 
-The method for modelling the data was Gaussian Naive Bayes built into scikit-learn.
-Pseudocode: https://scikit-learn.org/stable/modules/naive_bayes.html
+The method for modelling the data was Random Forest Classifier (RFC) built into scikit-learn.
+Pseudocode: http://dataaspirant.com/2017/05/22/random-forest-algorithm-machine-learing/
 
-The reason why we chose Naive Bayes is because it works well with a small training set, is extremely fast.
-Also, The decoupling of the class conditional feature distributions means that each distribution can be independently estimated as a one dimensional distribution. This in turn helps to alleviate problems stemming from the curse of dimensionality.
-(https://scikit-learn.org/stable/modules/naive_bayes.html)
+The reason why we chose RFC is:
+Random forests is considered as a highly accurate and robust method because of the number of decision trees participating in the process.
+It does not suffer from the overfitting problem. The main reason is that it takes the average of all the predictions, which cancels out the biases.
+You can get the relative feature importance, which helps in selecting the most contributing features for the classifier.
+(https://www.datacamp.com/community/tutorials/random-forests-classifier-python)
 
-Secondly, we found another group who ran the same data set through multiple classifiers and showed that Naive Bayes had one of the best performances (>95%). (https://jonathonbechtel.com/blog/2018/02/06/wines/)
+Secondly, we found another group who ran the same data set through multiple classifiers and showed that RFC had one of the best performances (>95%). (https://jonathonbechtel.com/blog/2018/02/06/wines/)
 
 ### Results
 
@@ -49,7 +51,9 @@ We can see in the confusion matrix that this model has a accuracy well over 95% 
 
 ### Discussion
 
-The method used seems to easily predict wine origin based on its chemical composition when using all features in the analysis. With a accuracy rate over 95%, it seems to be more than adequate to be able to identify which vinyard a non-labeled wine comes from. There is always ways to improve and just because the accuracy rate is high it doesn't mean that it will perform this well with new data. In order to make this better, I would try to to run this model on new data, measure the performance and then if the models accuracy is deteriorating, I would tune the selected features to improve the model. 
+The method used seems to easily predict wine origin based on its chemical composition when using all features in the analysis. With a accuracy rate over 95%, it seems to be more than adequate to be able to identify which vinyard a non-labeled wine comes from. There is always ways to improve and just because the accuracy rate is high it doesn't mean that it will perform this well with new data. In order to make this better, I would try to to run this model on new data, measure the performance and then if the models accuracy is deteriorating, I would tune the selected features to improve the model based on the results of the following Feature Importances Graph.
+
+![alt text](https://github.com/mikeditri/class9/blob/master/figures/Gaussian_NB_with_Accuracy.png) 
 
 ### References
 

@@ -11,4 +11,4 @@ RUN pip3 install seaborn
 RUN pip3 install tqdm
 RUN pip3 install sklearn
 WORKDIR /app
-CMD ["python3", "/app/Final_script.py"]
+CMD ["python3", "/app/Random_F.py"]
